@@ -1,0 +1,192 @@
+:root {
+    --text-color: #333;
+    --text-muted: #666;
+    --bg-card: rgba(255, 255, 255, 0.85); /* Effet translucide prêt pour votre fond */
+    --primary: #007BFF;
+    --primary-hover: #0056b3;
+    --error: #e74c3c;
+    --border-radius: 16px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e2e8f0; /* Fond neutre de base que vous remplacerez */
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.logo h1 {
+    font-size: 32px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+/* Recherche */
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    outline: none;
+    font-family: inherit;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-box input:focus {
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+.search-box button {
+    padding: 15px 25px;
+    border: none;
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-box button:hover {
+    background-color: var(--primary-hover);
+}
+
+.search-box button:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+/* Erreurs */
+.error-message {
+    background-color: #fdeaea;
+    color: var(--error);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Cartes Météo */
+.card {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    backdrop-filter: blur(12px); /* L'effet "verre" sur fond image */
+    margin-bottom: 20px;
+}
+
+.current-weather {
+    text-align: center;
+}
+
+.current-weather h2 {
+    margin: 0 0 10px 0;
+    font-size: 26px;
+}
+
+.temp-main {
+    font-size: 64px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    text-align: left;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.6);
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.detail-item .icon { font-size: 20px; }
+.detail-text { display: flex; flex-direction: column; }
+.detail-text .label { font-size: 12px; color: var(--text-muted); }
+.detail-text .value { font-weight: 600; font-size: 15px; }
+
+/* Prévisions */
+.forecast-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.forecast-container {
+    display: flex;
+    gap: 15px;
+}
+
+.forecast-card {
+    flex: 1;
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    padding: 15px 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    backdrop-filter: blur(12px);
+}
+
+.forecast-date {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+}
+
+.forecast-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.forecast-temps { font-size: 15px; font-weight: 600; }
+.forecast-temps .min { color: var(--text-muted); font-weight: 400; margin-left: 5px; }
+
+@media (max-width: 480px) {
+    .forecast-container { flex-direction: column; }
+}
