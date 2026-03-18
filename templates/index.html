@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Météo 34 - Hérault</title>
+    <!-- Chargement de la police moderne Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo généré en SVG -->
+        <div class="logo">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3V5M5.636 5.636L7.05 7.05M3 12H5M5.636 18.364L7.05 16.95M12 21V19M18.364 18.364L16.95 16.95M21 12H19M18.364 5.636L16.95 7.05M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="#FFC107" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <h1>Météo <span class="highlight">Hérault</span></h1>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Ex: Montpellier, Béziers, Sète...">
+            <button id="searchBtn">Chercher</button>
+        </div>
+
+        <!-- Zone d'affichage des erreurs -->
+        <div id="errorMessage" class="error-message hidden"></div>
+
+        <!-- Conteneur météo principal -->
+        <div id="weatherContent" class="weather-content hidden">
+            <!-- Carte du jour -->
+            <div class="card current-weather">
+                <h2 id="cityName">Montpellier</h2>
+                <div class="temp-main">
+                    <span id="currentTemp">--</span>°C
+                </div>
+                
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <span class="icon">💧</span>
+                        <div class="detail-text">
+                            <span class="label">Humidité</span>
+                            <span id="humidity" class="value">--%</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">💨</span>
+                        <div class="detail-text">
+                            <span class="label">Vent</span>
+                            <span id="wind" class="value">-- km/h</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">🌅</span>
+                        <div class="detail-text">
+                            <span class="label">Lever du soleil</span>
+                            <span id="sunrise" class="value">--:--</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">🌇</span>
+                        <div class="detail-text">
+                            <span class="label">Coucher du soleil</span>
+                            <span id="sunset" class="value">--:--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carte des prévisions -->
+            <h3 class="forecast-title">Les 3 prochains jours</h3>
+            <div class="forecast-container" id="forecastContainer">
+                <!-- Les cartes de prévision seront injectées ici par le Javascript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
