@@ -63,7 +63,7 @@ async function fetchWeather(lat, lon) {
         console.error(error);
     }
 }
-
+// CORAZON IMAGENES
 function getWeatherIconPath(code) {
     if (code === 0) return "images/sol.png";
     if (code === 1 || code === 2) return "images/clouds.png";
@@ -92,11 +92,6 @@ async function addDataCurrent(data, selectedCity) {
     // Convert sunrise and sunset
     document.getElementById('sunrise').textContent = formatTime(data.daily.sunrise[0]) + " am";
     document.getElementById('sunset').textContent = formatTime(data.daily.sunset[0]) + " pm";
-    
-    // Hourly relative humidity indexing
-    // The Open-Meteo current_weather doesn't give humidity, we must use hourly.
-    // For a rough match, we just use the first hour of humidity from the hourly arrays provided.
-    // A more precise approach finds the index of current hour.
     const currentHourISO = data.current_weather.time; 
     let humidityIndex = data.hourly.time.indexOf(currentHourISO);
     if(humidityIndex === -1) humidityIndex = 0; // fallback
@@ -112,7 +107,7 @@ async function addDataForecast(data) {
 
     const dayNames = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
     
-    // For day 1, 2, 3 in index (which correspond to tomorrow, day after tomorrow, etc.)
+    // para los dias
     for (let i = 1; i <= 3; i++) {
         let forecastDate = new Date(data.daily.time[i]);
         dayElements[i-1].textContent = dayNames[forecastDate.getDay()];
@@ -133,8 +128,6 @@ async function showWeather() {
         addDataForecast(data);
     }
 }
-
-// Initial load
 window.onload = () => {
     selectCity.value = estaciones[0];
     showWeather();
