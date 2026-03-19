@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro-Beziers</title>
+</head>
+<body>
+    <div class="container">
+        <div class="first-container">
+            <img src="images/logo.png" alt="Metro-Beziers Logo" class="brand-logo">
+            <h1 class="title">Metro-Beziers</h1>
+            <p class="subtitle">La météo de la région de l'Hérault</p>
+            <div class="search-container">
+                <select id="select-city">
+                    <!-- Options populated via JS -->
+                </select>
+            </div>
+            <button onclick="showWeather()">Rechercher</button>
+        </div>
+        <div class="second-container">
+            <div class="weather-container">
+                <section class="first-section">
+                    <img id="img-city" src="images/sol.png" alt="Condition">
+                    <div class="container-name-date">
+                        <span id="name-city">--</span>
+                        <span id="date-city">--</span>
+                    </div>
+                    <span id="temp-city">--°</span>
+                </section>
+                <section class="second-section">
+                    <div class="flex-container">
+                        <div class="container-info">
+                            <img src="images/amanecer.png" alt="Aube">
+                            <div class="container-stats">
+                                <span class="name-data">Aube</span>
+                                <span class="data" id="sunrise">--:--</span>
+                            </div>
+                        </div>
+                        <div class="container-info">
+                            <img src="images/atardecer.png" alt="Crépuscule">
+                            <div class="container-stats">
+                                <span class="name-data">Crépuscule</span>
+                                <span class="data" id="sunset">--:--</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-container">
+                        <div class="container-info">
+                            <img src="images/humedad.png" alt="Humidité">
+                            <div class="container-stats">
+                                <span class="name-data">Humidité</span>
+                                <span class="data" id="humidity">--%</span>
+                            </div>
+                        </div>
+                        <div class="container-info">
+                            <img src="images/wind.png" alt="Vent">
+                            <div class="container-stats">
+                                <span class="name-data">Vent</span>
+                                <span class="data" id="wind">-- km/h</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="third-section">
+                    <div class="container-days">
+                        <span class="day">--</span>
+                        <img class="icon-day" src="images/sol.png" alt="Jour">
+                        <span class="max-temp">--°</span>
+                    </div>
+                    <div class="container-days">
+                        <span class="day">--</span>
+                        <img class="icon-day" src="images/sol.png" alt="Jour">
+                        <span class="max-temp">--°</span>
+                    </div>
+                    <div class="container-days">
+                        <span class="day">--</span>
+                        <img class="icon-day" src="images/sol.png" alt="Jour">
+                        <span class="max-temp">--°</span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
