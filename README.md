@@ -1,22 +1,28 @@
-# Météo Hérault ☀️
+# Metro-Beziers Weather Application
 
-Une application web simple et moderne affichant la météo exclusivement pour les villes du département de l'Hérault (34). 
+**Metro-Beziers** est une application web élégante et moderne permettant de consulter en direct la météo de 28 communes stratégiques du département de l'**Hérault**, dans le sud de la France.
 
-## 🌟 Fonctionnalités
-- **Filtre départemental :** N'autorise que les villes appartenant au 34 (Montpellier, Sète, Béziers...) grâce à une liste interne.
-- **Données réelles :** Utilise l'API géante gratuite d'Open-Meteo sans aucune clé nécessaire.
-- **Détails météo :** Température actuelle, vent, humidité, lever & coucher du soleil.
-- **Prévisions :** Historique sur 3 jours glissants.
-- **Ui / Ux :** Interface stylisée en Glassmorphism pour laisser respirer l'image d'arrière plan.
+Cette application utilise l'API publique d'**Open-Meteo** pour fournir des données précises en temps réel, incluant la température, l'humidité, la vitesse du vent et les prévisions pour les 4 à 5 prochains jours. L'interface a été conçue pour être sobre, esthétique et intuitive.
 
-## 🏗 Structure du projet
+## Lien direct
+Vous pouvez accéder à l'application ici :  
+**[Visiter Metro-Beziers](https://arlo2004.github.io/APPmetro-beziers/)**
+
+___
+
+## Structure du Projet
+
+L'organisation des fichiers est optimisée pour un déploiement statique rapide sur GitHub Pages :
+
 ```text
-/
-├── app.py                # Backend Flask (Routing API météo)
-├── requirements.txt      # Dépendances Python
-├── templates/
-│    └── index.html       # Interface principale
-├── static/
-│    ├── style.css        # Styles CSS modernes
-│    └── script.js        # Logique Fetch Frontend
-└── README.md
+/ (Racine du projet)
+├── index.html          
+├── style.css           
+├── script.js           # Logique JavaScript (API Fetch)
+├── README.md           
+├── clima-fut.py        
+├── images/             # Dossier des ressources visuelles
+│   ├── logo.png        
+│   ├── bg3.jpg         
+│   ├── sol.png         
+│   └── ...             # Autres icônes
